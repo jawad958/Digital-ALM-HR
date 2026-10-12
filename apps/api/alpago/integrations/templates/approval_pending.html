@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<body style="font-family: -apple-system, system-ui, sans-serif; background: #FAF8F2; margin: 0; padding: 32px;">
+  <div style="max-width: 560px; margin: 0 auto; background: #FFFFFF; border: 1px solid #E8DFC9; border-radius: 14px; padding: 32px;">
+    <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #8A7340; font-weight: 500;">
+      Alpago HR · Approval needed
+    </div>
+    <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; margin: 16px 0 24px; color: #1A1512; font-weight: 400;">
+      {{ title }}
+    </h1>
+    <p style="color: #4A443D; line-height: 1.65; margin: 0 0 16px;">
+      Hi {{ approver_name|default('there') }},
+    </p>
+    <p style="color: #4A443D; line-height: 1.65; margin: 0 0 16px;">
+      <strong>{{ submitter }}</strong> submitted a <strong>{{ request_type }}</strong> that needs your approval. Your SLA for this decision is {{ sla_hours|default('48') }} hours.
+    </p>
+    <p style="margin: 32px 0;">
+      <a href="{{ approve_url }}" style="display: inline-block; padding: 14px 28px; background: linear-gradient(180deg, #C9A961, #8A7340); color: #FFFFFF; text-decoration: none; font-weight: 600; border-radius: 10px; margin-right: 8px;">
+        Approve
+      </a>
+      <a href="{{ open_url }}" style="display: inline-block; padding: 14px 28px; background: #FFFFFF; border: 1px solid #D8CFB7; color: #1A1512; text-decoration: none; font-weight: 600; border-radius: 10px;">
+        Open in platform
+      </a>
+    </p>
+    <p style="color: #8A8378; font-size: 12px; line-height: 1.6; margin: 32px 0 0; border-top: 1px solid #E8DFC9; padding-top: 24px;">
+      You received this because you are the current approver in the chain. Need to delegate? Use the "Delegate" option on the request page.
+    </p>
+  </div>
+</body>
+</html>

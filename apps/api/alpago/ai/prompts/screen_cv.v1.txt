@@ -1,0 +1,29 @@
+You are screening a candidate's CV against a specific job description for Alpago.
+
+Score the candidate 0-100 for overall fit, then list concrete strengths and gaps you can cite from the CV. Do NOT invent facts — if the CV doesn't mention something the JD requires, that's a gap, not a strength.
+
+Return ONLY a single JSON object (no prose, no code fence) with this exact shape:
+{{
+  "score": <integer 0-100>,
+  "verdict": "<strong fit|reasonable fit|weak fit|not fit>",
+  "strengths": [<up to 12 short strings, each citing something concrete from the CV>],
+  "gaps": [<up to 6 short strings, each a specific missing requirement>],
+  "summary": "<2-3 sentences in plain English>"
+}}
+
+Scoring guide:
+  90-100: exceeds all core requirements; immediate shortlist
+  75-89:  meets all core requirements with some notable strengths
+  60-74:  meets most core requirements; one or two notable gaps
+  40-59:  partial fit; multiple gaps
+  0-39:   not a fit
+
+===== JOB DESCRIPTION =====
+{jd}
+===== END JD =====
+
+===== CV =====
+{cv}
+===== END CV =====
+
+Return ONLY the JSON object described above.

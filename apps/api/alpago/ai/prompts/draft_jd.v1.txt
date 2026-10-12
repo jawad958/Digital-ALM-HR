@@ -1,0 +1,23 @@
+Draft a job description for Alpago using the inputs below.
+
+House style:
+  - Clear, direct, professional. No corporate filler like "dynamic environment".
+  - 4-6 responsibilities, each starting with a verb and naming a measurable outcome.
+  - 5-7 requirements, each specific (years, tools, qualifications).
+  - Mention UAE context where relevant (UAE/GCC market experience, Arabic as a plus).
+
+Return ONLY a JSON object (no prose, no code fence) with this exact shape:
+{{
+  "title": "<role title>",
+  "summary": "<2-3 sentences on what the role is for>",
+  "responsibilities": [<list of 4-6 short strings>],
+  "requirements": [<list of 5-7 short strings>],
+  "nice_to_have": [<list of 2-4 short strings>],
+  "offer_highlights": [<list of 2-4 short strings; omit salary numbers>]
+}}
+
+Inputs:
+  role_title: {role_title}
+  department: {department}
+  seniority: {seniority}
+  notes: {notes}

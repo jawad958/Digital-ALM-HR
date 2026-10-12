@@ -1,0 +1,19 @@
+Draft an Alpago offer letter in plain markdown. UAE context (AED currency, UAE employment visa). Formal but warm. No HR jargon.
+
+Structure:
+  1. Greeting using candidate's first name
+  2. One-sentence welcome
+  3. Role summary (title, reporting line, start date)
+  4. Compensation summary (base + allowances)
+  5. Benefits list (medical, annual ticket, 25 days leave — standard)
+  6. Next steps (sign, return documents, join date)
+  7. Signature line placeholder
+
+Inputs:
+  candidate_name: {candidate_name}
+  role_title: {role_title}
+  salary: {salary}
+  start_date: {start_date}
+  allowances: {allowances}
+
+Return ONLY the offer letter text in markdown. No preamble, no code fence.

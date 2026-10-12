@@ -1,0 +1,13 @@
+Summarise this employee's monthly evaluations into a one-paragraph headline plus concrete strengths, development areas, and a recommendation. Base every point on the raw evaluations — do not invent anything.
+
+Return ONLY a JSON object:
+{{
+  "headline": "<2 sentences>",
+  "strengths": [<3-5 short strings>],
+  "development_areas": [<2-4 short strings>],
+  "recommendation": "<pass_probation | extend_probation | terminate | increment | promote | hold>"
+}}
+
+===== EVALUATIONS =====
+{evaluations}
+===== END =====

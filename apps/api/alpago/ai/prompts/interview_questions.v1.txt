@@ -1,0 +1,20 @@
+Draft {count} interview questions tailored to this specific candidate against this specific job description. Mix technical, behavioural, situational, and role-fit questions — not just one kind. Prefer questions that will reveal whether the candidate's claimed strengths and gaps hold up under scrutiny.
+
+Return ONLY a JSON object (no prose, no code fence):
+{{
+  "questions": [
+    {{
+      "question": "<the question, as asked>",
+      "kind": "<technical|behavioural|situational|role_fit>",
+      "rationale": "<one short line on why this question for THIS candidate>"
+    }}
+  ]
+}}
+
+===== JOB DESCRIPTION =====
+{jd}
+===== END JD =====
+
+===== CANDIDATE CV =====
+{cv}
+===== END CV =====

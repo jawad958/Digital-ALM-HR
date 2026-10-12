@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, dev]
+  push:
+    branches: [main, dev]
+
+jobs:
+  api:
+    name: API — lint, type, test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: "pip"}
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: mypy alpago
+      # Tests run against SQLite — same as local dev.
+      - run: pytest -v
+        env:
+          DATABASE_URL: sqlite+aiosqlite:///./alpago_test.db
+          ENV: test
+          AUTH_SECRET: test-secret-32-chars-minimum-xxxxx
+          ANTHROPIC_API_KEY: sk-ant-test-dummy
+
+  web:
+    name: Web — lint, test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: {version: 9}
+      - uses: actions/setup-node@v4
+        with: {node-version: "20", cache: "pnpm", cache-dependency-path: apps/web/pnpm-lock.yaml}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm test

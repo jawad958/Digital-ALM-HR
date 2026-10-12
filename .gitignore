@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+.next/
+.turbo/
+dist/
+*.tsbuildinfo
+.pnpm-debug.log*
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Local data
+uploads/
+
+# SQLite dev databases
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Real employee data (never commit)
+apps/api/employee-register.xlsx

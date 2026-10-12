@@ -1,0 +1,14 @@
+<!doctype html>
+<html><body style="font-family: -apple-system, system-ui, sans-serif; background: #FAF8F2; padding: 32px;">
+  <div style="max-width: 560px; margin: 0 auto; background: #FFFFFF; border: 1px solid #E8DFC9; border-radius: 14px; padding: 32px;">
+    <div style="font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #B88B2F;">Document expiring</div>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin: 16px 0; color: #1A1512; font-weight: 400;">
+      {{ document_type }} expires {{ expires_in_days }} days
+    </h1>
+    <p style="color: #4A443D; line-height: 1.65;">
+      {{ employee_name }}'s {{ document_type }} expires on <strong>{{ expiry_date }}</strong>.
+      {% if pro_action %}PRO renewal has been queued; the next step is {{ pro_action }}.{% endif %}
+    </p>
+    <p style="margin: 24px 0;"><a href="{{ open_url }}" style="color: #8A7340; font-weight: 600;">Open employee profile →</a></p>
+  </div>
+</body></html>
